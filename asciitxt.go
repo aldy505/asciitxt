@@ -32,6 +32,10 @@ func WithConfig(txt string, config Config) string {
 		config.Style = StyleStandard
 	}
 
+	if txt == "" {
+		return ""
+	}
+
 	letters := strings.Split(txt, "")
 	var arr [][]string
 	llen := getStyleLength(config.Style)

@@ -20,3 +20,24 @@ func TestWithConfig(t *testing.T) {
 		t.Error("should not be empty")
 	}
 }
+
+func TestEmpty(t *testing.T) {
+	s := asciitxt.New("")
+	if s != "" {
+		t.Error("should be empty, got:", s)
+	}
+}
+
+func TestInvalidStyle(t *testing.T) {
+	// this should panic
+	assertPanic(t, func() { asciitxt.WithConfig("hello", asciitxt.Config{Style: 2}) })
+}
+
+func assertPanic(t *testing.T, f func()) {
+	defer func() {
+		if r := recover(); r == nil {
+			t.Errorf("The code did not panic")
+		}
+	}()
+	f()
+}
