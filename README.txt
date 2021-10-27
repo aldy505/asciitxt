@@ -28,19 +28,19 @@ Just a simple utility for creating...
 
 The usage is pretty straight forward, on your Go file:
 
-import "github.com/aldy505/asciitxt"
+    import "github.com/aldy505/asciitxt"
 
-func main() {
-  output := asciitxt.New("Hello world", asciitxt.Standard)
-  
-  // or
+    func main() {
+      output := asciitxt.New("Hello world")
+      
+      // or
 
-  output = asciitxt.WithConfig("Hello world", &asciitxt.Config{
-    Style: asciitxt.Standard,
-  })
-}
+      output = asciitxt.WithConfig("Hello world", &asciitxt.Config{
+        Style: asciitxt.StyleStandard,
+      })
+    }
 
-What's the asciitxt.Standard, you asked.
+What's the asciitxt.StyleStandard, you asked.
 
 Well, I thought it would be nice if we could have more than one style.
 But, for now that's a long term plan.
