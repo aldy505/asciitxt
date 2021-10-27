@@ -49,16 +49,16 @@ func WithConfig(txt string, config Config) string {
 		arr = append(arr, temp)
 	}
 
-	var output string
+	var output strings.Builder
 
 	for k := 0; k < llen; k++ {
 		for l := 0; l < len(arr); l++ {
-			output += arr[l][k]
+			output.WriteString(arr[l][k])
 		}
-		output += "\n"
+		output.WriteString("\n")
 	}
 
-	return output
+	return output.String()
 }
 
 //
