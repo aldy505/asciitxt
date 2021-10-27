@@ -1,7 +1,11 @@
-# ASCIITXT
+     _      ____     ____   ___   ___   _____  __  __  _____ 
+    / \    / ___|   / ___| |_ _| |_ _| |_   _| \ \/ / |_   _|
+   / _ \   \___ \  | |      | |   | |    | |    \  /    | |  
+  / ___ \   ___) | | |___   | |   | |    | |    /  \    | |  
+ /_/   \_\ |____/   \____| |___| |___|   |_|   /_/\_\   |_|  
+                                                             
 
-```
-Just a simple utilities for creating...
+Just a simple utility for creating...
 
   _____   _____  __  __  _____ 
  |_   _| | ____| \ \/ / |_   _|
@@ -21,6 +25,7 @@ Just a simple utilities for creating...
    | |   |  _  |  | |   ___) | 
    |_|   |_| |_| |___| |____/  
                                
+
 The usage is pretty straight forward, on your Go file:
 
 import "github.com/aldy505/asciitxt"
@@ -42,5 +47,7 @@ But, for now that's a long term plan.
 
 My current goal is to support most unicode letters and signs.
 
-Licensed under MIT License. See the LICENSE file.
-```
+See Go Package documentation for more details: https://pkg.go.dev/github.com/aldy505/asciitxt
+
+Licensed under MIT License.
+See the LICENSE file.

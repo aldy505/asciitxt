@@ -1,6 +1,6 @@
 package asciitxt
 
-const StandardLength = 6
+const standardLength = 6
 
 func getStandardLetter(letter string) []string {
 	switch letter {

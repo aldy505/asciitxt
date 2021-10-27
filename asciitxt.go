@@ -1,3 +1,4 @@
+// ASCIITXT is a simple utility for creating ascii texts.
 package asciitxt
 
 import (
@@ -7,20 +8,28 @@ import (
 type Style int
 
 const (
-	Standard Style = iota + 1
+	StyleStandard Style = iota + 1
 )
 
 type Config struct {
 	Style Style
 }
 
+// Generates a multi-line ASCII string with the default style.
+// As simple as that.
 func New(txt string) string {
-	return WithConfig(txt, Config{Style: Standard})
+	return WithConfig(txt, Config{Style: StyleStandard})
 }
 
+// Generates a multi-line ASCII string from a defined Config.
+// The config itself could be empty. It'll look for its' default value.
+// But if you don't intend to put any config whatsoever, please use New().
+//
+// Please note that this function will panic if the config.Style
+// is invalid. Find the styles from the constants with Style prefix.
 func WithConfig(txt string, config Config) string {
 	if config.Style == 0 {
-		config.Style = Standard
+		config.Style = StyleStandard
 	}
 
 	letters := strings.Split(txt, "")
@@ -48,10 +57,11 @@ func WithConfig(txt string, config Config) string {
 	return output
 }
 
+//
 func getStyleLength(style Style) int {
 	switch style {
-	case Standard:
-		return StandardLength
+	case StyleStandard:
+		return standardLength
 	default:
 		return 0
 	}
@@ -59,7 +69,7 @@ func getStyleLength(style Style) int {
 
 func getStyleLetter(style Style, letter string) []string {
 	switch style {
-	case Standard:
+	case StyleStandard:
 		return getStandardLetter(letter)
 	default:
 		panic("invalid style was given")
