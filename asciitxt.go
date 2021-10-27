@@ -1,4 +1,6 @@
-// ASCIITXT is a simple utility for creating ascii texts.
+// ASCIITXT is a simple utility for creating ASCII texts.
+// The text that can be created is limited to a certain input as the maintainers
+// have to input all the text manually.
 package asciitxt
 
 import (
@@ -61,7 +63,7 @@ func WithConfig(txt string, config Config) string {
 	return output.String()
 }
 
-//
+// Get a depth (vertical) length for a certain style.
 func getStyleLength(style Style) int {
 	switch style {
 	case StyleStandard:
@@ -71,6 +73,8 @@ func getStyleLength(style Style) int {
 	}
 }
 
+// Get a letter by a certain style.
+// It returns a panic if the style input is invalid.
 func getStyleLetter(style Style, letter string) []string {
 	switch style {
 	case StyleStandard:
