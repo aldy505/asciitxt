@@ -7,12 +7,12 @@ const fs = require('fs/promises');
 // the letters array just to be a single value.
 const letters = 
 [
-`        
-   __ _ 
-  / _\` |
- | (_| |
-  \\__,_|
-        `,
+`  _ 
+ (_)
+ | |
+ | |
+ |_|
+    `,
 ]
 
 ;(async () => {
@@ -26,5 +26,5 @@ const letters =
     }
     output += "}\n";
   }
-  await fs.writeFile('./../generated.go', output, { encoding: 'utf-8' });
+  await fs.writeFile('./generated.go', output, { encoding: 'utf-8' });
 })();

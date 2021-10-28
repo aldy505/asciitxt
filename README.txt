@@ -35,7 +35,7 @@ The usage is pretty straight forward, on your Go file:
       
       // or
 
-      output = asciitxt.WithConfig("Hello world", &asciitxt.Config{
+      output = asciitxt.WithConfig("Hello world", asciitxt.Config{
         Style: asciitxt.StyleStandard,
       })
     }

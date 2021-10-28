@@ -7,14 +7,22 @@ import (
 )
 
 func TestNew(t *testing.T) {
-	s := asciitxt.New("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG 0123456789 _ the quick brown fox jumps over the lazy dog")
+	s := asciitxt.New("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG 0123456789 æ` the quick brown fox jumps over the lazy dog")
 
 	if s == "" {
 		t.Error("should not be empty")
 	}
 }
 func TestWithConfig(t *testing.T) {
-	s := asciitxt.WithConfig("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG 0123456789 _ the quick brown fox jumps over the lazy dog", asciitxt.Config{})
+	s := asciitxt.WithConfig("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG 0123456789 æ` the quick brown fox jumps over the lazy dog", asciitxt.Config{})
+
+	if s == "" {
+		t.Error("should not be empty")
+	}
+}
+
+func TestSymbols(t *testing.T) {
+	s := asciitxt.WithConfig(`!"#$%&'()*+,-./:;<=>?[\]^_{|}~¡¢£¥¨§©±`, asciitxt.Config{Style: asciitxt.StyleStandard})
 
 	if s == "" {
 		t.Error("should not be empty")
