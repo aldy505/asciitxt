@@ -22,7 +22,7 @@ func TestWithConfig(t *testing.T) {
 }
 
 func TestSymbols(t *testing.T) {
-	s := asciitxt.WithConfig(`!"#$%&'()*+,-./:;<=>?[\]^_{|}~¡¢£¥¨§©±`, asciitxt.Config{Style: asciitxt.StyleStandard})
+	s := asciitxt.WithConfig(`!@"#$%&'()*+,-./:;<=>?[\]^_{|}~¡¢£¥¨§©±`, asciitxt.Config{Style: asciitxt.StyleStandard})
 
 	if s == "" {
 		t.Error("should not be empty")
